@@ -17,7 +17,7 @@ var randomNumber
 // add a onclick event listener to each crystal
 $(document).ready(function () {
 
-    function startRound() {
+    
         redCrystal = Math.floor(Math.random() * 10);
         blueCrystal = Math.floor(Math.random() * 10);
         orangeCrystal = Math.floor(Math.random() * 10);
@@ -27,53 +27,93 @@ $(document).ready(function () {
         function getRandom(min, max) {
             min = Math.ceil(50);
             max = Math.floor(100);
-            return targetNumber = Math.floor(Math.random() * (max - min)) + min; 
+            return targetNumber = Math.floor(Math.random() * (max - min)) + min;
         }
 
         getRandom();
-        $("#target-score").html("<h2>" + targetNumber + "</h2>")
+
+        
 
         $("#crystal-red").on("click", function () {
             totalScore = totalScore + redCrystal
             console.log(totalScore = totalScore + redCrystal)
-            $("#total-score").html("<h2>" + totalScore + "</h2>")
+            $("#total-score").html(totalScore)
+            if (totalScore == targetNumber) {
+                win();
+            }
+            else if (totalScore > targetNumber) {
+                loss();
+            }
         });
 
         $("#crystal-blue").on("click", function () {
             totalScore = totalScore + blueCrystal
             console.log(totalScore = totalScore + blueCrystal)
-            $("#total-score").html("<h2>" + totalScore + "</h2>")
+            $("#total-score").html(totalScore)
+            if (totalScore == targetNumber) {
+                win();
+            }
+            else if (totalScore > targetNumber) {
+                loss();
+            }
         });
 
         $("#crystal-orange").on("click", function () {
             totalScore = totalScore + orangeCrystal
             console.log(totalScore = totalScore + orangeCrystal)
-            $("#total-score").html("<h2>" + totalScore + "</h2>")
+            $("#total-score").html(totalScore)
+            if (totalScore == targetNumber) {
+                win();
+            }
+            else if (totalScore > targetNumber) {
+                loss();
+            }
         });
 
         $("#crystal-green").on("click", function () {
             totalScore = totalScore + greenCrystal
             console.log(totalScore = totalScore + greenCrystal)
-            $("#total-score").html("<h2>" + totalScore + "</h2>")
+            $("#total-score").html(totalScore)
+            if (totalScore == targetNumber) {
+                win();
+            }
+            else if (totalScore > targetNumber) {
+                loss();
+            }
         });
 
-        // $(totalScore).on("click", function(){
-        //     for(var i = 0; i < targetNumber;)
+        $("#wins").text(winsTotal)
+        $("#losess").text(lossTotal)
 
-        // })
+        $("#target-score").html(targetNumber)
 
-        function checkScore () {
-            if(targetNumber === totalScore) {
-                alert("You Win!")
-                startRound();
-            }
-        }   
-        checkScore();
+    function reset() {
+        getRandom();
+        $("#target-score").html(targetNumber)
+        $('#target-score').text(targetNumber);
+        redCrystal = Math.floor(Math.random() * 10);
+        blueCrystal = Math.floor(Math.random() * 10);
+        orangeCrystal = Math.floor(Math.random() * 10);
+        greenCrystal = Math.floor(Math.random() * 10);
+        totalScore = 0;
+        $("#total-score").text(totalScore);
+    }
+    function win() {
+        alert("You aren't a complete disapointment!");
+        winsTotal++;
+        $('#wins').text(winsTotal);
+        reset();
+    }
+
+    function loss() {
+        alert("You are a disapointment!!");
+        lossTotal++;
+        $('#losses').text(lossTotal);
+        reset()
+    }
+    
 
 
-    };
-    startRound();
-  
 });
 
 

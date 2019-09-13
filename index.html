@@ -5,26 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Crystals Collector</title>
-    
-    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <h1>CrystalsCollector!</h1>
-
+    <h2 class="important">By clicking on a crystal, you will add a specific amount of points to your total score,
+        You win the game by matching your total score to the random number,
+        You lose the game if your total score goes above the random number,
+        The value of each crystal is hidden from you until you click on it,
+        Each time when the game starts, the game will change the values of each crystal.</h2>
     <div id="target-score">0</div>
-    <div>
-        Wins:<div id="wins">0</div>
-        Losses:<div id="losses">0</div>
+    <div class="winsandloss">
+        <h3>Wins:</h3><div id="wins">0</div>
+        <h3>Losses:</h3><div id="losses">0</div>
     </div>
-    <div>
-        <button id="crystal-red">red crystal</button>
-        <button id="crystal-blue">blue crystal</button>
-        <button id="crystal-orange">orange crystal</button>
-        <button id="crystal-green">green crystal</button>
+    <div class="gene-simmons-family-jewels">
+        <img src="assets/images/redjewel.jpg" id="crystal-red" width=150px>
+        <img src="assets/images/bluejewel.jpg" id="crystal-blue" width=150px>
+        <img src="assets/images/orangejewel.jpg" id="crystal-orange" width=150px>
+        <img src="assets/images/greenjewel.jpg" id="crystal-green" width=150px>
     </div>
-    <p>Your total score is:</p>
-    <div id="total-score"><h2>0</h2></div>   
+    <div class="score-total">
+    <h3>Your total score is:</h3>
+    <div id="total-score">0</div>   
+    </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/javascript/javascript.js"></script>
