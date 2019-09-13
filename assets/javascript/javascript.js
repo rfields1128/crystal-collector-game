@@ -104,14 +104,14 @@ $(document).ready(function () {
         $("#total-score").text(totalScore);
     }
     function win() {
-        alert("You aren't a complete disapointment!");
+        alert("You Win! You aren't a complete disapointment!");
         winsTotal++;
         $('#wins').text(winsTotal);
         reset();
     }
 
     function loss() {
-        alert("You are a disapointment!!");
+        alert("You lose. You are a disapointment!!");
         lossTotal++;
         $('#losses').text(lossTotal);
         reset()
