@@ -4,28 +4,18 @@ body{
     margin: 0 auto;
 }
 
-h1, div, .important, p{
-    background-color: orange;
-    font-family: 'PT Serif', serif;
-}
 
-#target-score, #total-score{
-    font-weight: 800px;
-    font-size: 20px
-}
-.winsandloss{
+.font-style{
     font-size: 20px;
     font-weight: 800px;
-    padding: 20px;
-    margin: 20px;
+    
 }
 
-h1, .important, #target-score {
-    padding: 20px;
-    margin: 20px;
-}
 
-.score-total, .gene-simmons-family-jewels {
+
+.gene-simmons-family-jewels {
     padding: 20px;
     margin: 20px;
+    background-color: orange;
+    font-family: 'PT Serif', serif;
 }

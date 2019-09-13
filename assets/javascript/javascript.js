@@ -17,18 +17,23 @@ var randomNumber
 // add a onclick event listener to each crystal
 $(document).ready(function () {
 
-    
-        redCrystal = Math.floor(Math.random() * 10);
-        blueCrystal = Math.floor(Math.random() * 10);
-        orangeCrystal = Math.floor(Math.random() * 10);
-        greenCrystal = Math.floor(Math.random() * 10);
+        function randomInt(min,max){
+            min = Math.ceil(12);
+            max = Math.floor(1);
+        redCrystal = Math.floor(Math.random() * (max - min)) + min;
+        blueCrystal = Math.floor(Math.random() * (max - min)) + min;
+        orangeCrystal = Math.floor(Math.random() * (max - min)) + min;
+        greenCrystal = Math.floor(Math.random() * (max - min)) + min;
+        };
+
+        randomInt();
 
 
         function getRandom(min, max) {
-            min = Math.ceil(50);
-            max = Math.floor(100);
+            min = Math.ceil(19);
+            max = Math.floor(120);
             return targetNumber = Math.floor(Math.random() * (max - min)) + min;
-        }
+        };
 
         getRandom();
 
@@ -36,7 +41,7 @@ $(document).ready(function () {
 
         $("#crystal-red").on("click", function () {
             totalScore = totalScore + redCrystal
-            console.log(totalScore = totalScore + redCrystal)
+            console.log(redCrystal)
             $("#total-score").html(totalScore)
             if (totalScore == targetNumber) {
                 win();
@@ -48,7 +53,7 @@ $(document).ready(function () {
 
         $("#crystal-blue").on("click", function () {
             totalScore = totalScore + blueCrystal
-            console.log(totalScore = totalScore + blueCrystal)
+            console.log(blueCrystal)
             $("#total-score").html(totalScore)
             if (totalScore == targetNumber) {
                 win();
@@ -60,7 +65,7 @@ $(document).ready(function () {
 
         $("#crystal-orange").on("click", function () {
             totalScore = totalScore + orangeCrystal
-            console.log(totalScore = totalScore + orangeCrystal)
+            console.log(orangeCrystal)
             $("#total-score").html(totalScore)
             if (totalScore == targetNumber) {
                 win();
@@ -72,7 +77,7 @@ $(document).ready(function () {
 
         $("#crystal-green").on("click", function () {
             totalScore = totalScore + greenCrystal
-            console.log(totalScore = totalScore + greenCrystal)
+            console.log(greenCrystal)
             $("#total-score").html(totalScore)
             if (totalScore == targetNumber) {
                 win();
